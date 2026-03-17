@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav></nav>
+    <main>
+      <article class="left-dashboard">
+        <section class="search-bar">
+          <input type="text" placeholder="  Search the city" id="searchcity" />
+          <button value="submit" id="click">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </section>
+        <section class="current-weather">
+          <div class="city-temp">
+            <div id="cityname">Madrid, USA</div>
+            <div id="today-temp">30 °C</div>
+          </div>
+          <div id="weather-symbol"><i class="fa-solid fa-sun"></i></div>
+        </section>
+        <section class="today-forecast">
+          <div>Today's forecast</div>
+          <div id="forecast-card-hourly"></div>
+        </section>
+        <section class="air-condition">
+          <div>Air condition</div>
+          <div class="grid-ac">
+            <div>
+              <div><i class="fa-solid fa-temperature-half"></i> Real feel</div>
+              <div id="feel-temp">30 °C</div>
+            </div>
+            <div>
+              <div><i class="fa-solid fa-wind"></i> Wind</div>
+              <div id="windspeed">0.2 km/h</div>
+            </div>
+            <div>
+              <div><i class="fa-solid fa-droplet"></i> Chance of rain</div>
+              <div id="rain-chance">0 %</div>
+            </div>
+            <div>
+              <div><i class="fa-solid fa-sun"></i> UV index</div>
+              <div id="uv-index">3</div>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="right-dashboard">
+        <section class="sevenday-forecast">
+          <div>7 day forecast</div>
+          <div id="daily-forecast-container"></div>
+        </section>
+      </article>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
