@@ -5,10 +5,10 @@
   font-family: "Oxanium", sans-serif;
 }
 body {
-  background-color: #151a21;
+  background-image: linear-gradient(135deg, #0f1b2d, #0b1420);;
   display: grid;
   grid-template-columns: 10% auto;
-  color: azure;
+  color: #e6edf3;
 }
 nav {
   background-color: #ffffff45;
@@ -154,4 +154,20 @@ main {
 }
 .daily-weather-card:not(:last-child) {
     border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+}
+.card,
+.left-dashboard > section,
+.right-dashboard {
+  background: #1c2a3a;
+}
+.today-forecast,
+.air-condition {
+  background: #243447;
+}
+nav {
+  background: #1a2635;
+}
+section, .right-dashboard, nav {
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
