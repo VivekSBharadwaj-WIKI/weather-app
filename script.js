@@ -44,12 +44,19 @@ async function getWeather(city) {
   }
 }
 
-document.getElementById("click").addEventListener("click", () => {
-  const city = document.getElementById("searchcity").value.trim();
-  if (city) {
-    getWeather(city);
-  } else {
-    window.alert("No City Name");
+window.addEventListener("DOMContentLoaded", () => {
+  const savedCity = localStorage.getItem("city") || "Bangalore";
+  document.getElementById("searchcity").value = savedCity;
+  getWeather(savedCity);
+});
+
+document.getElementById("searchcity").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    const city = e.target.value.trim();
+    if (city) {
+      localStorage.setItem("city", city);
+      getWeather(city);
+    }
   }
 });
 
@@ -95,7 +102,7 @@ function renderDailyCards(weatherData, count = 6) {
   const container = document.getElementById("daily-forecast-container");
   container.innerHTML = "";
 
-  for (let i = 0; i < Math.min(count, weatherData.hourly.time.length); i++) {
+  for (let i = 0; i < Math.min(count, weatherData.daily.time.length); i++) {
     let time = new Date(weatherData.daily.time[i]).toLocaleDateString([], {
       weekday: "long",
     });

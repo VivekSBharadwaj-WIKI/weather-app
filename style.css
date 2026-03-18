@@ -29,7 +29,6 @@ main {
 }
 .left-dashboard > section {
   padding: 20px;
-  background-color: #ffffff55;
   border-radius: 25px;
 }
 .left-dashboard > .search-bar {
@@ -170,4 +169,37 @@ nav {
 section, .right-dashboard, nav {
   border-radius: 20px;
   backdrop-filter: blur(10px);
+}
+.search-bar {
+  padding: 0;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #1c2a3a;
+  border-radius: 30px;
+  padding: 10px 15px;
+  gap: 10px;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.search-container i {
+  color: #9aa7b5;
+  font-size: 14px;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #e6edf3;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Focus effect */
+.search-container:focus-within {
+  background: #243447;
+  box-shadow: 0 0 0 2px #2f80ed;
 }
