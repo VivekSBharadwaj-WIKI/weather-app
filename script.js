@@ -137,3 +137,11 @@ function getWeatherText(code) {
   if (code >= 95) return "Storm";
   return "Cloudy";
 }
+
+function toggleTheme() {
+  document.body.classList.toggle("light-mode");
+}
+
+document.getElementById("switch").addEventListener("click", () => {
+    toggleTheme();   
+});
