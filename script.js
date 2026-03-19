@@ -36,6 +36,24 @@ async function getWeather(city) {
     document.getElementById("uv-index").innerText =
       `${weatherData.current.uv_index} ${weatherData.current_units.uv_index}`;
 
+    const temp = weatherData.current.temperature_2m;
+
+    // map temp (0–50°C → 0–100%)
+    let percentage = Math.min(Math.max(temp, 0), 50) * 2;
+
+    document.getElementById("temp-fill").style.height = percentage + "%";
+    document.getElementById("temp-label").innerText = temp + "°";
+
+    const fill = document.getElementById("temp-fill");
+
+    if (temp < 15) {
+      fill.style.background = "linear-gradient(to top, #00c6ff, #0072ff)";
+    } else if (temp < 30) {
+      fill.style.background = "linear-gradient(to top, #f9d423, #ff9800)";
+    } else {
+      fill.style.background = "linear-gradient(to top, #ff4e50, #ff0000)";
+    }
+
     renderHourlyCards(weatherData);
     renderDailyCards(weatherData);
   } catch (err) {
@@ -143,5 +161,5 @@ function toggleTheme() {
 }
 
 document.getElementById("switch").addEventListener("click", () => {
-    toggleTheme();   
+  toggleTheme();
 });
