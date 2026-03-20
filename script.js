@@ -1,7 +1,10 @@
 async function getWeather(city) {
   try {
-    document.getElementById("today-temp").innerText = "Loading...";
+    const skeleton = document.getElementById("skeleton-main");
+    const real = document.getElementById("real-main");
 
+    skeleton.classList.remove("hidden");
+    real.classList.add("hidden");
     const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`;
     const geoRes = await fetch(geoUrl);
     const geoData = await geoRes.json();
@@ -17,6 +20,10 @@ async function getWeather(city) {
     console.log(weatherUrl);
     const weatherRes = await fetch(weatherUrl);
     const weatherData = await weatherRes.json();
+
+    await new Promise((res) => setTimeout(res, 600));
+    skeleton.classList.add("hidden");
+    real.classList.remove("hidden");
 
     document.getElementById("cityname").innerText =
       `${geoData.results[0].name}, ${geoData.results[0].country}`;

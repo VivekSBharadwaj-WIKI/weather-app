@@ -48,8 +48,14 @@
         </section>
         <section class="current-weather">
           <div class="city-temp">
-            <div id="cityname"></div>
-            <div id="today-temp"></div>
+            <div id="skeleton-main">
+              <div class="skeleton-box sk-city"></div>
+              <div class="skeleton-box sk-temp"></div>
+            </div>
+            <div id="real-main" class="hidden">
+              <div id="cityname"></div>
+              <div id="today-temp"></div>
+            </div>
           </div>
           <div id="weather-symbol"><i class="fa-solid fa-sun"></i></div>
         </section>
